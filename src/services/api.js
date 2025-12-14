@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const api = axios.create({ baseURL: "http://localhost:5000/api" });
+const api = axios.create({ baseURL: "https://intership-et7g.onrender.com/api" });
 
 
 api.interceptors.request.use(config => {
