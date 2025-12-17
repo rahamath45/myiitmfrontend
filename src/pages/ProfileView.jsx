@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import api from "../api";
+import api from "../services/api";
+
 
 const ProfileView = () => {
   const [profile, setProfile] = useState(null);
