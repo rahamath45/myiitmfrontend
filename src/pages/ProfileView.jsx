@@ -8,7 +8,7 @@ const ProfileView = () => {
   useEffect(() => {
     api.get("/profile")
       .then(res => {
-        console.log(res.data)
+        console.log("the profile",res.data)
          setProfile(res.data.user)
       }
       )
