@@ -7,7 +7,11 @@ const ProfileView = () => {
 
   useEffect(() => {
     api.get("/profile")
-      .then(res => setProfile(res.data.user))
+      .then(res => {
+        console.log(res.data)
+         setProfile(res.data.user)
+      }
+      )
       .catch(err => console.error(err));
   }, []);
 
@@ -33,20 +37,20 @@ const ProfileView = () => {
 
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">Role</span>
-            <span className="text-gray-800 font-semibold">{profile.role}</span>
+            <span className="text-gray-800 font-semibold">{profile.career?.role}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">Experience</span>
             <span className="text-gray-800 font-semibold">
-              {profile.experience} Years
+              {profile.career?.experience} Years
             </span>
           </div>
 
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">LinkedIn</span>
             <a
-              href={profile.links.linkedin}
+              href={profile.links?.linkedin}
               target="_blank"
               rel="noreferrer"
               className="text-indigo-600 hover:underline font-medium cursor:pointer"
@@ -58,7 +62,7 @@ const ProfileView = () => {
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">GitHub</span>
             <a
-              href={profile.links.github}
+              href={profile.links?.github}
               target="_blank"
               rel="noreferrer"
               className="text-indigo-600 hover:underline font-medium cursor:pointer"
@@ -70,7 +74,7 @@ const ProfileView = () => {
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">Portfolio</span>
             <a
-              href={profile.links.portfolio}
+              href={profile.links?.portfolio}
               target="_blank"
               rel="noreferrer"
               className="text-indigo-600 hover:underline font-medium cursor:pointer"
