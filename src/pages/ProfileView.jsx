@@ -9,7 +9,7 @@ const ProfileView = () => {
     api.get("/profile")
       .then(res => {
         console.log("the profile",res.data)
-         setProfile(res.data.user)
+         setProfile(res.data)
       }
       )
       .catch(err => console.error(err));
