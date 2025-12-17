@@ -7,7 +7,7 @@ const ProfileView = () => {
 
   useEffect(() => {
     api.get("/profile")
-      .then(res => setProfile(res.data))
+      .then(res => setProfile(res.data.user))
       .catch(err => console.error(err));
   }, []);
 
@@ -46,10 +46,10 @@ const ProfileView = () => {
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">LinkedIn</span>
             <a
-              href={profile.linkedin}
+              href={profile.links.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-600 hover:underline font-medium"
+              className="text-indigo-600 hover:underline font-medium cursor:pointer"
             >
               View
             </a>
@@ -58,10 +58,10 @@ const ProfileView = () => {
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">GitHub</span>
             <a
-              href={profile.github}
+              href={profile.links.github}
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-600 hover:underline font-medium"
+              className="text-indigo-600 hover:underline font-medium cursor:pointer"
             >
               View
             </a>
@@ -70,10 +70,10 @@ const ProfileView = () => {
           <div className="flex justify-between">
             <span className="text-gray-500 font-medium">Portfolio</span>
             <a
-              href={profile.portfolio}
+              href={profile.links.portfolio}
               target="_blank"
               rel="noreferrer"
-              className="text-indigo-600 hover:underline font-medium"
+              className="text-indigo-600 hover:underline font-medium cursor:pointer"
             >
               View
             </a>
