@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export default function Profile() {
   const [data, setData] = useState({
@@ -24,6 +25,7 @@ export default function Profile() {
 
   const [loading, setLoading] = useState(false);
   const [saved, setSaved] = useState(false);
+  const navigate = useNavigate();
 
   /* ✅ CORRECT PLACE — REPLACE your old useEffect with this */
   useEffect(() => {
@@ -58,6 +60,7 @@ export default function Profile() {
 
     if (res.data?.message) {
       setSaved(true);
+       navigate("/profile/view");
     }
 
   } catch (err) {
@@ -226,6 +229,7 @@ export default function Profile() {
             <p className="text-center text-green-400 text-sm">
               ✅ Profile updated successfully
             </p>
+            
           )}
         </div>
       </div>

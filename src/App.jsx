@@ -4,6 +4,7 @@ import './App.css'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Profile from './pages/Profile'
+import ProfileView from './pages/ProfileView'
 
 function App() {
  
@@ -14,6 +15,7 @@ function App() {
 <Route path="/" element={<Register />} />
 <Route path="/login" element={<Login />} />
 <Route path="/profile" element={<Profile />} />
+ <Route path="/profile/view" element={<ProfileView />} />
 </Routes>
     </>
   )
